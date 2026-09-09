@@ -1,3 +1,5 @@
+import { publicUrl } from "@/lib/public-url";
+
 export interface GameAssets {
   wall: HTMLImageElement;
   floor: HTMLImageElement;
@@ -52,11 +54,11 @@ export function loadAssets(): Promise<GameAssets> {
   if (pending) return pending;
   pending = (async () => {
     const [wall, floor, door, title, ...sprites] = await Promise.all([
-      loadImage("/game/wall.jpg"),
-      loadImage("/game/floor.jpg"),
-      loadImage("/game/door.jpg"),
-      loadImage("/game/title.jpg"),
-      ...SPRITE_NAMES.map((n) => loadImage(`/game/${n}.png`)),
+      loadImage(publicUrl("/game/wall.jpg")),
+      loadImage(publicUrl("/game/floor.jpg")),
+      loadImage(publicUrl("/game/door.jpg")),
+      loadImage(publicUrl("/game/title.jpg")),
+      ...SPRITE_NAMES.map((n) => loadImage(publicUrl(`/game/${n}.png`))),
     ]);
     const map: Record<string, HTMLImageElement> = {};
     SPRITE_NAMES.forEach((n, i) => {

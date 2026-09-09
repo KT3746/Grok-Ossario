@@ -2,6 +2,8 @@
 
 Dungeon crawler em primeira pessoa no navegador. Explore a cripta do rei morto, lute por turnos, saqueie os ossos e desça até o trono.
 
+**Jogar:** [kt3746.github.io/Grok-Ossario](https://kt3746.github.io/Grok-Ossario/)
+
 Feito com Grok Build.
 
 ## Como jogar

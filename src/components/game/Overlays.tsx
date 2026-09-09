@@ -17,6 +17,7 @@ import { APP_NAME, ENEMIES, ITEMS, SKILLS, floorName, xpToNext } from "@/lib/gam
 import { getTile } from "@/lib/game/dungeon";
 import { useGame } from "@/lib/game/store";
 import { TILE_DOOR, TILE_LOCKED, TILE_WALL } from "@/lib/game/types";
+import { publicUrl } from "@/lib/public-url";
 
 function cx(...p: Array<string | false | null | undefined>) {
   return p.filter(Boolean).join(" ");
@@ -64,7 +65,7 @@ export function TitleScreen({ ready }: { ready: boolean }) {
   return (
     <div className="absolute inset-0 z-20 flex flex-col">
       <img
-        src="/game/title.jpg"
+        src={publicUrl("/game/title.jpg")}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
       />
